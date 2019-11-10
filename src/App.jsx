@@ -1,5 +1,6 @@
 import React, { createContext, Component } from 'react';
-import logo from './logo.svg';
+import TestLazy from './testLazy';
+import Memo from './Memo.jsx';
 import './App.css';
 
 const BatteryContext = createContext();
@@ -10,7 +11,11 @@ class Leaf extends Component {
   render() {
     const battery = this.context;
     return (
-      <h1>Battery:{battery}</h1>
+      <div>
+        <h1>Battery:{battery}</h1>
+        <TestLazy></TestLazy>
+      </div>
+
     );
   }
 }
@@ -31,13 +36,17 @@ class App extends Component {
   render() {
     const { battery, online } = this.state;
     return (
-      <BatteryContext.Provider value={battery}>
-        <OnlineContext.Provider value={online}>
-          <button type="button" onClick={() => { this.setState({ battery: battery - 1 }) }}>press</button>
-          <button type="button" onClick={() => { this.setState({ online: !online }) }}>switch</button>
-          <Middle />
-        </OnlineContext.Provider>
-      </BatteryContext.Provider>
+      <div>
+        <BatteryContext.Provider value={battery}>
+          <OnlineContext.Provider value={online}>
+            <button type="button" onClick={() => { this.setState({ battery: battery - 1 }) }}>press</button>
+            <button type="button" onClick={() => { this.setState({ online: !online }) }}>switch</button>
+            <Middle />
+          </OnlineContext.Provider>
+        </BatteryContext.Provider>
+        <Memo></Memo>
+      </div>
+
     );
   }
 }
