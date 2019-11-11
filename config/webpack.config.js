@@ -26,6 +26,8 @@ const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpackPlugin');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 const eslint = require('eslint');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 
 const postcssNormalize = require('postcss-normalize');
 
@@ -506,11 +508,25 @@ module.exports = function(webpackEnv) {
               // its runtime that would otherwise be processed through "file" loader.
               // Also exclude `html` and `json` extensions so they get processed
               // by webpacks internal loaders.
-              exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/],
+              exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/,/\.scss$/],
               options: {
                 name: 'static/media/[name].[hash:8].[ext]',
               },
             },
+            {
+              test: /\.css$/,
+              use: ExtractTextPlugin.extract({
+                  fallback: "style-loader",
+                  use: "css-loader"
+              }),
+            },
+            {
+              test: /\.scss$/,
+              use: ExtractTextPlugin.extract({
+                  fallback: "style-loader",
+                  use: ["css-loader","sass-loader"]
+              }),
+            }
             // ** STOP ** Are you adding a new loader?
             // Make sure to add the new loader(s) before the "file" loader.
           ],
