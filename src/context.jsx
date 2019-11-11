@@ -1,5 +1,5 @@
 import React, { Component, createContext,useContext } from "react";
-import SlideTable from  './components/SlideTable';
+import SlideTable from  './components/slideTable_temp.jsx';
 
 const CountContext = createContext();
 

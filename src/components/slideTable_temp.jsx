@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useRef } from "react";
 import "../assets/css/slideTable.scss";
 import BScroll from 'better-scroll';
 
@@ -6,7 +6,7 @@ import BScroll from 'better-scroll';
 
 function SlideTable(props) {
   const [hasHeader, setHasHeader] = useState(props.hasHeader || true);
-  const [tableWidth, settableWidth] = useState(375);
+  const [tableWidth, settableWidth] = useState(0);
   const [leftFixedColumns, setleftFixedColumns] = useState([]);
   const [leftFixedWidth, setleftFixedWidth] = useState(0);
   const [textAlign, settextAlign] = useState("center");
@@ -17,8 +17,8 @@ function SlideTable(props) {
   const [portableColumns, setportableColumns] = useState([]);
   const [picScroll,setpicScroll] = useState(null);
 
-  let tableWrap = React.createRef();
-  let portableWrapper = React.createRef();
+  const tableWrap = useRef();
+  const portableWrapper = useRef();
 
   function computeColumnWidth(percent) {
     if (!percent) {
@@ -31,6 +31,7 @@ function SlideTable(props) {
         ? percent.substr(0, percent.length - 1)
         : percent
     );
+    console.log(num,tableWidth)
     return Math.floor((num / 100) * tableWidth);
   }
 
@@ -85,10 +86,10 @@ function SlideTable(props) {
       );
       settableWidth(tableWidth);
     } else {
-      console.log("tableWrap", tableWrap);
+      console.log("tableWrap", tableWrap.current.clientWidth);
       settableWidth(tableWrap.current.clientWidth);
     }
-  });
+  },[]);
 
   useEffect(() => {
     // 获取 leftFixedColumns
@@ -101,6 +102,7 @@ function SlideTable(props) {
       columnitem.width = computeColumnWidth(columnitem.width);
       sum += columnitem.width;
     });
+    console.log(sum)
     setleftFixedWidth(sum);
     setleftFixedColumns(cols);
   }, []);
@@ -126,9 +128,7 @@ function SlideTable(props) {
     setportableColumns(cols);
   }, []);
 
-  useEffect(() => {
-   
-  },[]);
+ 
 
   return (
     <div style={{ backgroundColor: props.backgroundColor || "#fff" }}>
@@ -157,7 +157,7 @@ function SlideTable(props) {
           </table>
         </div>
         <div className="portable" style={{padding:`0  0  0 ${leftFixedWidth}px`}}>
-          <div className="innertable" ref="portableWrapper">
+          <div className="innertable" ref={portableWrapper}>
             <table className="table" style={{width:`${portableWidth}px`}}>
               {
                 hasHeader && (
