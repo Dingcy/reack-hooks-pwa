@@ -1,6 +1,5 @@
 .table-wrap {
   /* background-color: #fff; */
-  width: 100%;
   position: relative;
   margin: 0 16px;
   .left-fixed {
@@ -148,4 +147,40 @@ thead {
   /* no */
   border-bottom: 1px solid #EEF1F6;
   /* no */
+}
+
+.stock_code{
+  font-size: 12px;
+  color: #9BA3B4;
+  text-align: left;
+  display: inline-block;
+  width: 100%;
+}
+.stock_name{
+  font-size: 16px;
+  color: #121C32;
+  font-weight: bold;
+  text-align: left;
+  display: inline-block;
+  width: 100%;
+}
+
+.name-code{
+  display: flex;
+  height: 60px;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 20px;
+}
+
+.red{
+  color: #F9373F;
+}
+
+.green{
+  color: #1CB44A;
+}
+
+.hui{
+  color: #121c32;
 }
