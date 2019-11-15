@@ -1,0 +1,143 @@
+.geekthings {
+  .black_theme {
+    background: rgb(64,66,79);
+  }
+  // 布局
+  .flex_bt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .flex_ar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .tl{
+    text-align: left;
+  }
+  .tr{
+    text-align: right;
+  }
+  .tc{
+    text-align: center;
+  }
+  // 字体样式
+  .active_blue {
+    color: #4f7efa;
+  }
+  .white {
+    color: #fff;
+  }
+  .black_3 {
+    color: #5d667a;
+  }
+  .black_2 {
+    color: #828ca2;
+  }
+  .black_1 {
+    color: #bbc4d3;
+  }
+  .red {
+    color: #ef464d;
+  }
+  .green {
+    color: #47c36c;
+  }
+  // 字体大小
+  .f14 {
+    font-size: 14px;
+  }
+  .f12 {
+    font-size: 12px;
+  }
+  .f10 {
+    font-size: 10px;
+  }
+  .f8 {
+    font-size: 8px;
+  }
+  // 边距
+  .padding_lr_16 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .margin_r3 {
+    margin-right: 3px;
+  }
+  .margin_b10{
+    margin-bottom: 10px;
+  }
+  .margin_t10{
+    margin-top: 10px;
+  }
+  .margin_b20{
+    margin-bottom: 20px;
+  }
+  .margin_t20{
+    margin-top: 20px;
+  }
+  .margin_lr_16 {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  // 宽度
+  .width_15 {
+    width: 15%;
+  }
+  .width_20 {
+    width: 20%;
+  }
+  .width_30 {
+    width: 30%;
+  }
+  .width_33{
+    width:33%;
+  }
+  .width_50 {
+    width: 50%;
+  }
+  .width_60 {
+    width: 60%;
+  }
+  .width_70 {
+    width: 70%;
+  }
+  .width_80 {
+    width: 80%;
+  }
+  .width_100 {
+    width: 100%;
+  }
+  // 伪类
+  .shuxian{
+    position: relative;
+  }
+  .shuxian:after{
+    display: block;
+    content:'';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 1px;
+    height: 12px;
+    background: #50586F;
+  }
+
+  // 加载中
+  .loading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // 标题
+  .chart_title{
+    font-size: 14px;
+    color: rgba(190,199,221,1);
+  }
+  .chart_title_unit{
+    font-size: 12px;
+    color: #6F7584;
+  }
+}

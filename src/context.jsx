@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import SlideTable from "./components/slideTableHook.jsx";
+import MoneyFlow from './components/moneyflow/MoneyFlow.jsx';
+
+import "./assets/css/common.scss";
 
 // const CountContext = createContext();
 
@@ -315,6 +318,20 @@ export default class Context extends Component {
         ten_updown_range_temp:
           '<p style="font-size:15px;font-weight:bold;" class="red">+6.44%</p>'
       }
+    ],
+    money:[
+      {
+        secName: "格力电器",
+        netFlow: -2600
+      },
+      {
+        secName: "中国联通",
+        netFlow: -1500
+      },
+      {
+        secName: "三维工程",
+        netFlow: 800
+      }
     ]
   };
 
@@ -324,15 +341,17 @@ export default class Context extends Component {
       console.log(code);
     };
     return (
-      <div>
+      <div className="geekthings">
         {/* <CountContext.Provider value="60">
           <Bar3></Bar3>
         </CountContext.Provider> */}
-        <SlideTable
+        {/* <SlideTable
           tapHead={tapHead}
           dataSource={this.state.dataSource}
           columns={this.state.columns}
-        ></SlideTable>
+        ></SlideTable> */}
+
+        <MoneyFlow moneyFlowData = {this.state.money}></MoneyFlow>
       </div>
     );
   }

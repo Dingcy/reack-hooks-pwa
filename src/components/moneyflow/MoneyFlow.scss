@@ -1,0 +1,57 @@
+.process_bar{
+  height: 8px;
+  width: 198px;
+  background:rgb(64,66,79);
+  border-radius: 4px;
+  position: relative;
+}
+
+.process_bar_green{
+  position: absolute;
+  background: linear-gradient(90deg,rgba(136,248,173,1) 0%,rgba(31,206,83,1) 100%);
+  border-radius: 4px;
+  height: 8px;
+  left: 0;
+  top: 0;
+}
+
+.process_bar_red{
+  position: absolute;
+  background: linear-gradient(90deg,rgba(255,157,127,1) 0%,rgba(244,45,53,1) 100%);
+  border-radius: 4px;
+  height: 8px;
+  left: 0;
+  top: 0;
+}
+
+.moneyflow_item{
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+}
+
+.main_force_detail{
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.money_flow_detail{
+  border:1px solid rgba(97,96,112,1);
+  box-shadow: 0px 0px 0.01rem 0.01rem #6F7584;
+  padding:20px 10px;
+  background: rgb(55,55,72);
+  border-radius: 6px;
+  margin-top: 10px;
+  position: relative;
+}
+.money_flow_detail:after{
+  position: absolute;
+  display: block;
+  content: '';
+  top: -20px;
+  right: 25px;
+  border-top: 10px transparent dashed;
+  border-left: 10px transparent dashed;
+  border-right: 10px transparent dashed;
+  border-bottom: 10px rgb(55,55,72) solid;
+}
