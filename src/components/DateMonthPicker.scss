@@ -1,0 +1,47 @@
+.geekthings-datetimePicker{
+  .am-modal-content{
+    box-sizing: content-box;
+    background: #40424F;
+    border-radius: 6px 6px 0 0 ;
+    padding-left:16px ;
+    padding-right: 16px;
+    .header{
+      height: 50px;
+      border-bottom: 1px solid rgba(80,88,111,1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &-cancel{
+        font-size: 15px;
+        color: #6F7584;
+      }
+      &-title{
+        font-size: 15px;
+        color: #BEC7DD;
+      }
+    }
+    .choice{
+      display: flex;
+      height: 86px;
+      justify-content: center;
+      align-items: center;
+      &-input{
+        outline: none;
+        border: none;
+        font-size: 16px;
+        color: #6F7584;
+        background: transparent;
+        text-align: center;
+        border-bottom: 3px solid rgba(187,196,211,1);
+        height: 50px;
+      }
+      &-middle{
+        font-size: 16px;
+        color: #858E9D;
+        margin-left:10px;
+        margin-right: 10px;
+      }
+    }
+  }
+ 
+}

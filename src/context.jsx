@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import SlideTable from "./components/slideTableHook.jsx";
 import MoneyFlow from './components/moneyflow/MoneyFlow.jsx';
+import DateMonthPicker from 'components/DateMonthPicker';
+
 
 import "./assets/css/common.scss";
 
@@ -332,8 +334,15 @@ export default class Context extends Component {
         secName: "三维工程",
         netFlow: 800
       }
-    ]
+    ],
+    showModal:false
   };
+
+   closeModal(){
+    this.setState({
+      showModal:false
+    })
+  }
 
   render() {
     const tapHead = params => {
@@ -342,6 +351,9 @@ export default class Context extends Component {
     };
     return (
       <div className="geekthings">
+
+        <p onClick={() => this.setState({showModal:true})}>打开</p>
+
         {/* <CountContext.Provider value="60">
           <Bar3></Bar3>
         </CountContext.Provider> */}
@@ -351,7 +363,9 @@ export default class Context extends Component {
           columns={this.state.columns}
         ></SlideTable> */}
 
-        <MoneyFlow moneyFlowData = {this.state.money}></MoneyFlow>
+        {/* <MoneyFlow moneyFlowData = {this.state.money}></MoneyFlow> */}
+
+        <DateMonthPicker showModal={this.state.showModal} onClose={this.closeModal.bind(this)} type={'date'} data={[{value:'111',label:'上海'},{value:'22222',label:'深圳'}]}></DateMonthPicker>
       </div>
     );
   }
