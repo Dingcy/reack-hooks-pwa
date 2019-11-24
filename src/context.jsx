@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-import SlideTable from "./components/slideTableHook.jsx";
-import MoneyFlow from './components/moneyflow/MoneyFlow.jsx';
-import DateMonthPicker from 'components/DateMonthPicker';
+// import SlideTable from "./components/slideTableHook.jsx";
+// import MoneyFlow from './components/moneyflow/MoneyFlow.jsx';
+// import DateMonthPicker from 'components/DateMonthPicker';
+
 
 
 import "./assets/css/common.scss";
+import JishuFenXi from "components/jishufenxi/Jishufenxi";
 
 // const CountContext = createContext();
 
@@ -345,14 +347,14 @@ export default class Context extends Component {
   }
 
   render() {
-    const tapHead = params => {
-      const { code } = params;
-      console.log(code);
-    };
+    // const tapHead = params => {
+    //   const { code } = params;
+    //   console.log(code);
+    // };
     return (
       <div className="geekthings">
 
-        <p onClick={() => this.setState({showModal:true})}>打开</p>
+        {/* <p onClick={() => this.setState({showModal:true})}>打开</p> */}
 
         {/* <CountContext.Provider value="60">
           <Bar3></Bar3>
@@ -365,7 +367,9 @@ export default class Context extends Component {
 
         {/* <MoneyFlow moneyFlowData = {this.state.money}></MoneyFlow> */}
 
-        <DateMonthPicker showModal={this.state.showModal} onClose={this.closeModal.bind(this)} type={'date'} data={[{value:'111',label:'上海'},{value:'22222',label:'深圳'}]}></DateMonthPicker>
+        {/* <DateMonthPicker showModal={this.state.showModal} onClose={this.closeModal.bind(this)} type={'date'} data={[{value:'111',label:'上海'},{value:'22222',label:'深圳'}]}></DateMonthPicker> */}
+
+        <JishuFenXi />
       </div>
     );
   }
